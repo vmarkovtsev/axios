@@ -10,11 +10,11 @@ function listDirs(root) {
   var files = fs.readdirSync(root);
   var dirs = [];
 
-  for (var i=0, l=files.length; i<l; i++) {
+  for (var i=0, l=files.length; i<l; i++){
     var file = files[i];
-    if (file[0] !== '.') {
+    if (file[0] !== '.'){
       var stat = fs.statSync(path.join(root, file));
-      if (stat.isDirectory()) {
+      if (stat.isDirectory()){
         dirs.push(file);
       }
     }
@@ -23,7 +23,7 @@ function listDirs(root) {
   return dirs;
 }
 
-function getIndexTemplate() {
+function getIndexTemplate ( ){
   var links = dirs.map(function (dir) {
     var url = '/' + dir;
     return '<li onclick="document.location=\'' + url + '\'"><a href="' + url + '">' + url + '</a></li>';
